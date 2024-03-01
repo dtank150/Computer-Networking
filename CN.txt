@@ -1,0 +1,198 @@
+NIC:- Network Interface Card
+MAC:- Media Access Control
+Every network has network interface card and every NIC has a unique MAC address
+
+LAN:- Local Area Network
+Ethernet is used to connect LAN devices
+
+Unicast is one to one communication
+Layer 2(l2) segment = broadcast domain
+Router break up broadcast domains
+
+OSI-Model:-
+Layer 7 - Application
+Layer 6 - Presentation
+Layer 5 - Session
+Layer 4 - Transport
+Layer 3 - Network
+Layer 2 - Data Link
+Layer 1 - Physical
+
+Ip address is a layer 3 network address
+ARP:- Address Resolution Protocol
+Each layer 2 segment has its own unique IP address range, its own IP subnet
+The router is a default getway
+
+IP Address Range:-
+10.1.1.11 => Octes
+each of these sction of the address are made up of eight binary digits 
+
+Subnets:-
+10.1.1.0 /24
+10.1.2.0 /24 
+10.1.0.0 /16
+
+This 2 subnets we call a slash 24. That means that the first 24 bits are the network address. 
+each one of theese chunks of the address is eight binary digits.
+24 networks we have got an address range of 10.1.1.0 through 255.
+
+10.1.0.0 /16 => which means that the first 16 bits are reserved for the network itself.
+10.1.0.0 /16
+10.1.0.0 - 
+10.1.255.255 
+So this 10.1.0.0 address can include all of the addresses between 10.1.0.0 through 10.1.255.255
+10.1.1.0 /24
+Network Address: 10.1.1.0
+Default Gateway: 10.1.1.1
+Broadcast Address: 10.1.1.255
+Usable:- 10.1.1.2-10.1.1.254
+
+The ARP table maps IP addresses to MAC addresses.
+
+VLAN:- Virtual Local Area Network
+VLAN:- Logical segmentation
+Physical switch has a single connection to the router. That connection is what we call a trunk port.
+Acces port belongs to single VLAN
+Each VLAN has a subnet
+Each VLAN is a broadcast domain
+Each VLAN has a MAC table
+Trunk port - multiple VLANs
+Access port - singlr VLAN
+
+WANs:- Wide Area Networks
+Ipsec VPN:- Connects one network to another network
+IPSEC VPN is secure connection over internet
+Routes will have public IP addresses
+
+Layer 2 VPN 
+L2VPN extend a segment over a deographic distance and over the internet
+Disaster recovery
+Mobility
+
+Network Redundancy:-
+SPOF - Single point of failure
+
+DHCP:- Dynamic Host Control Protocol
+Static IPs are manually set
+DHCP:- Automatic IP Assignment
+DHCP request is a L2 broadcast
+ipconfig /release
+ipconfig /renew:- new DHCP IP address.
+
+DNS:- Domain Name System
+
+Private Network:-
+10.0.0.0 to 10.255.255.255
+172.16.0.0 to 172.31.255.255
+192.168.0.0 to 192.168.255.255
+
+NAT:- Network Address Translation
+
+Wireless LAN (Wifi Network):-
+Wireless Network Different frequency:-
+2.4 Ghz
+  150 feet / 45 Meters (indoor)
+  300 feet / 90 Meters (outdoors)
+  Appx. 150 Mbps is a typical max
+  
+5 Ghz
+   50 Feet / 150 Meters (indoors)
+   Appx. 1300 Mbps max speed
+   
+SSID - Service Set Identifire
+
+What is IPFIX / Netflow?
+Netflow is a network protocol that was devloped by Cisco. And the objective of NetFlow is to provide visibility into network traffic by capturing data about that network traffic.
+Netflow and IPFIX basically same thing 
+The main diffrence between netflow and IPFIX:-
+Netflow is a devloped by cisco. 
+And IPFIX is an industry standard, and so Ipfix is going to be available on non Cisco equipment
+
+Networkflow Traffic Details:-
+Source and destination IP addresses.
+Source and destination ports.
+The type of protocol used (e.g., TCP, UDP)
+Bytes and packets sent and received.
+Timestamps for the start and end of the flow.
+
+NTP:- Network Time Protocol
+NTP Sources:-
+Traffic folws over UDP port 123
+NTP is easy as 123
+We can get the current time from the Naval Observatory
+
+Overview of IP Address:- 
+Types of IP Address:-
+Public/Private IP Address
+Private IP Address:-
+10.0.0.0 to 10.255.255.255
+172.16.0.0 to 172.31.255.255
+192.168.0.0 to 192.168.255.255
+
+Public IP Address:-
+Globally unique and routable on the internet.
+Assigned by internet service providers (ISPs).
+Used to identify devices on the public internet.
+Typically used for routers and firewalls facing the internet.
+
+Private IP Address:-
+Not globally unique used within local networks.
+Assigned by network administrators within private networks.
+Don't work on the internet
+
+IPV4 Address Struture:-
+IPV4 Address 192.168.0.6
+Subnet Mask 255.255.255.0
+Default Getway 192.168.0.1
+
+
+Classful vs. Classless addressing:-
+
+0.0.0.0-255.255.255.255
+only possible IP addresses start with 0.0.0.0. we have four octes and the largest any number can be within one of those octes is 255.
+Class A Address Ranges:-
+1.0.0.0 - 127.0.0.0
+16,777,214 devices :- 16 million devices that can get an address within that class A address range.	
+Class B Address Ranges:-
+128.0.0.0 to 191.255.0.0
+65,534 devices
+Class C Address Ranges:-
+192.0.0.0 to 223.255.255.0
+254 devices
+
+Converting Binary and Decimal:-
+For Ex:- 135 is an octet
+128 64 32 16 8 4 2 1 :- 8 binary digits 
+check 128 is lessthan 135
+now some calculation:- 137-128 =7
+check 7 is graterthan 64,32,16,8,4
+then check 7-4 = 3
+check 2 is graterthan 2 and 1
+10000111 = 135
+
+192.168.1.35
+192=> 1 1 0 0 0 0 0 0 => 128 + 64 = 192
+168=> 1 0 1 0 1 0 0 0 => 128 + 32 + 8 = 168 
+1 =>  0 0 0 0 0 0 0 1 => 1 = 1
+35 => 0 0 1 0 0 0 1 1 => 32 + 2 + 1 = 35
+
+Why 255?
+IP Address the highest possible vaule of any octect is 255.
+All of those binary values of a single octet 1
+128+64+32+16+8+4+2+1 = 255
+The 8 binary digits the maximum value is 255
+
+192.168.1.10
+Octet 1: 192 => 1 1 0 0 0 0 0 0
+Octet 2: 168 => 1 0 1 0 1 0 0 0
+Octet 3: 1   => 0 0 0 0 0 0 0 1
+Octet 4: 10  => 0 0 0 0 1 0 1 1
+
+192.168.1.10
+11000000.10101000.00000001.00001011
+
+255.255.255.0 
+
+
+What is Subnetting:-
+Subnetting is the practice of dividing a larger coputer network  into smaller, more manageable segments to improve network efficiency, security, and IP address allocation.
